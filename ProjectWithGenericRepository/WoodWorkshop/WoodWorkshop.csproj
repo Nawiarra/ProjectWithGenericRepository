@@ -70,8 +70,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Migration.Data\WoodWorkshop.Data.csproj">
-      <Project>{f7d43829-d846-42de-a37a-b1f3fd5b1a72}</Project>
+    <ProjectReference Include="..\WoodWorkshop.Data\WoodWorkshop.Data.csproj">
+      <Project>{7753b5a4-03f8-40ba-9960-14bcb6f57b70}</Project>
       <Name>WoodWorkshop.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\WoodWorkshop.Domain\WoodWorkshop.Domain.csproj">

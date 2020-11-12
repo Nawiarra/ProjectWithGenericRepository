@@ -15,16 +15,16 @@ namespace WoodWorkshop.Domain
 {
     public class WoodWorkshopService
     {
-        private readonly IWoodWorkshopRepository _woodWorkshopRepository;
+        private readonly WoodWorkshopRepository<WoodFurnitureOrder> _woodWorkshopRepository;
         private readonly WoodTypeRepository _woodTypeRepository;
         private readonly FurnitureTypeRepository _furnitureTypeRepository;
         private readonly IMapper _mapper;
 
         public WoodWorkshopService()
         {
-            _woodWorkshopRepository = new WoodWorkshopRepository();
-            _woodTypeRepository = new WoodTypeRepository(new MigrationContext());
-            _furnitureTypeRepository = new FurnitureTypeRepository(new MigrationContext());
+            _woodWorkshopRepository = new WoodWorkshopRepository<WoodFurnitureOrder>(new WoodWorkshopContext());
+            _woodTypeRepository = new WoodTypeRepository(new WoodWorkshopContext());
+            _furnitureTypeRepository = new FurnitureTypeRepository(new WoodWorkshopContext());
 
             var mapperConfig = new MapperConfiguration(cfg =>
             {
@@ -41,7 +41,7 @@ namespace WoodWorkshop.Domain
         public void CreateFurnitureRequest(WoodFurnitureOrderModel model)
         {
 
-            var ListsOfEqualsUserFurniture = _woodWorkshopRepository.GetAllByCustomerId(model.CustomerId);
+            var ListsOfEqualsUserFurniture = _woodWorkshopRepository.Get(x => x.CustomerId== model.CustomerId);
 
             if (ListsOfEqualsUserFurniture != null)
             {
@@ -98,7 +98,7 @@ namespace WoodWorkshop.Domain
 
         public List<WoodFurnitureOrderModel> GetAll()
         {
-            var woodFurnitures = _woodWorkshopRepository.GetAll();
+            var woodFurnitures = _woodWorkshopRepository.Get();
 
             return _mapper.Map<List<WoodFurnitureOrderModel>>(woodFurnitures);
         }

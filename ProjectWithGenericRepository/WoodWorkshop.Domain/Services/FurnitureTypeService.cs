@@ -19,7 +19,7 @@ namespace WoodWorkshop.Domain.Services
 
         public FurnitureTypeService()
         {
-            _furnitureTypeRepository = new FurnitureTypeRepository(new MigrationContext());
+            _furnitureTypeRepository = new FurnitureTypeRepository(new WoodWorkshopContext());
 
             var mapperConfig = new MapperConfiguration(cfg =>
             {

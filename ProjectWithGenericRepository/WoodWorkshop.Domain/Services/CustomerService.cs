@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WoodWorkshop.Data.Models;
-using WoodWorkshop.Data.Repositories;
 using WoodWorkshop.Domain.Models;
+using WoodWorkshop.Data.Repositories;
+using WoodWorkshop.Data.Models;
 
 namespace WoodWorkshop.Domain.Services
 {

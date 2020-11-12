@@ -19,7 +19,7 @@ namespace WoodWorkshop.Domain.Services
 
         public WoodTypeService()
         {
-            _woodTypeRepository = new WoodTypeRepository(new MigrationContext());
+            _woodTypeRepository = new WoodTypeRepository(new WoodWorkshopContext());
 
             var mapperConfig = new MapperConfiguration(cfg =>
             {

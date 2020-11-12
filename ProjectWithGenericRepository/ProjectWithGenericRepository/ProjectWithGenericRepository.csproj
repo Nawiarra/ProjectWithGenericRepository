@@ -61,7 +61,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\ProgramWithCodeFirst2.0\ProgramWithCodeFirst2.0\WoodWorkshop\WoodWorkshop.csproj">
+    <ProjectReference Include="..\WoodWorkshop\WoodWorkshop.csproj">
       <Project>{6bbed123-ce72-497e-af0d-84178d815601}</Project>
       <Name>WoodWorkshop</Name>
     </ProjectReference>
